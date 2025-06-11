@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVIC TV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom scrollbar for content rows */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+            scrollbar-width: none;  /* For Firefox */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #141414; /* Netflix-like dark background */
+            color: #e5e5e5; /* Light grey text */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black to-transparent p-4 md:px-8">
+        <nav class="flex items-center justify-between max-w-7xl mx-auto">
+            <!-- Logo/Title -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-red-600 text-3xl font-bold tracking-tight rounded-md p-2">OVIC TV</a>
+                <!-- Navigation Links - Hidden on small screens, shown on medium and up -->
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#" class="hover:text-gray-300 transition-colors duration-200">Home</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors duration-200">TV Shows</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors duration-200">Movies</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors duration-200">My List</a>
+                </div>
+            </div>
+
+            <!-- User Actions (e.g., Search, Profile) -->
+            <div class="flex items-center space-x-4">
+                <button class="text-white hover:text-gray-300 transition-colors duration-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div class="relative group">
+                    <img src="https://placehold.co/40x40/FF0000/FFFFFF?text=A" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer border-2 border-red-600 transition-transform duration-200 hover:scale-105">
+                    <!-- Dropdown Menu (placeholder) -->
+                    <div class="absolute right-0 mt-2 w-48 bg-black bg-opacity-90 rounded-md shadow-lg py-1 hidden group-hover:block transition-all duration-200 ease-in-out transform origin-top-right scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 rounded-md transition-colors duration-200">Account</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 rounded-md transition-colors duration-200">Help Center</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 rounded-md transition-colors duration-200">Sign out of OVIC TV</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] md:h-[85vh] bg-cover bg-center flex items-end p-4 md:p-12" style="background-image: url('masaaki-komori-Gy4nokYkkok-unsplash.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+            <div class="relative z-10 max-w-xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg rounded-md p-2">The Digital Frontier</h1>
+                <p class="text-lg md:text-xl mb-6 leading-relaxed drop-shadow-md hidden sm:block">A gripping story of technological innovation and its unforeseen consequences. Dive into a world where reality blurs with the virtual. Available now on OVIC TV.</p>
+                <div class="flex space-x-4">
+                    <button class="flex items-center px-6 py-3 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-300 transition-colors duration-300 transform hover:scale-105">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        Play
+                    </button>
+                    <button class="flex items-center px-6 py-3 bg-gray-600 bg-opacity-70 text-white font-semibold rounded-lg shadow-lg hover:bg-gray-500 transition-colors duration-300 transform hover:scale-105">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        More Info
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Rows -->
+        <section class="px-4 md:px-8 py-8 -mt-20 relative z-20">
+            <!-- Trending Now -->
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 ml-2">Trending Now</h2>
+            <div class="flex overflow-x-scroll scrollbar-hide space-x-4 pb-4">
+                <!-- Movie Card 1 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="khanh-do-Mn0IlfP_ZGo-unsplash.jpg" alt="Movie 1" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Chronicles of Eldoria</h3>
+                        <p class="text-sm text-gray-400">Fantasy, Adventure</p>
+                    </div>
+                </div>
+                <!-- Movie Card 2 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="history-in-hd-e5eDHbmHprg-unsplash.jpg" alt="Movie 2" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Last Astronaut</h3>
+                        <p class="text-sm text-gray-400">Sci-Fi, Drama</p>
+                    </div>
+                </div>
+                <!-- Movie Card 3 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="kevin-et-laurianne-langlais-454ZlywO0_Q-unsplash.jpg" alt="Movie 3" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">City of Shadows</h3>
+                        <p class="text-sm text-gray-400">Thriller, Crime</p>
+                    </div>
+                </div>
+                <!-- Movie Card 4 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="kiya-golara-Fvy80vPSeIE-unsplash.jpg" alt="Movie 4" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Whispers in the Woods</h3>
+                        <p class="text-sm text-gray-400">Horror, Mystery</p>
+                    </div>
+                </div>
+                <!-- Movie Card 5 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="b-r-LIKPfu5cShM-unsplash.jpg" alt="Movie 5" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Beyond the Stars</h3>
+                        <p class="text-sm text-gray-400">Sci-Fi, Action</p>
+                    </div>
+                </div>
+                <!-- Movie Card 6 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="zhangzui-YjwD7gy1GMg-unsplash.jpg" alt="Movie 6" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Sunken City</h3>
+                        <p class="text-sm text-gray-400">Adventure, Thriller</p>
+                    </div>
+                </div>
+                <!-- Movie Card 7 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="chris-stein-ZPKJ3dEA88c-unsplash.jpg" alt="Movie 7" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Codebreaker</h3>
+                        <p class="text-sm text-gray-400">Action, Espionage</p>
+                    </div>
+                </div>
+                <!-- Movie Card 8 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="javier-miranda-kXLgdCmmGYk-unsplash.jpg" alt="Movie 8" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Starfall</h3>
+                        <p class="text-sm text-gray-400">Sci-Fi, Fantasy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Releases -->
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 mt-8 ml-2">New Releases</h2>
+            <div class="flex overflow-x-scroll scrollbar-hide space-x-4 pb-4">
+                <!-- Movie Card 1 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="greta-scholderle-moller-nM0gK7-jYaw-unsplash.jpg" alt="New Release 1" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Forgotten Tome</h3>
+                        <p class="text-sm text-gray-400">Mystery, Suspense</p>
+                    </div>
+                </div>
+                <!-- Movie Card 2 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="christian-lue-rXr1vRi9V4k-unsplash.jpg" alt="New Release 2" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Pixel Pioneers</h3>
+                        <p class="text-sm text-gray-400">Animation, Comedy</p>
+                    </div>
+                </div>
+                <!-- Movie Card 3 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="daoud-abismail-nEc4GG2B3Gk-unsplash.jpg" alt="New Release 3" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Echoes of the Past</h3>
+                        <p class="text-sm text-gray-400">Historical Drama</p>
+                    </div>
+                </div>
+                <!-- Movie Card 4 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="erwann-stephanne-GUOzBcVIpc0-unsplash.jpg" alt="New Release 4" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Quantum Paradox</h3>
+                        <p class="text-sm text-gray-400">Sci-Fi, Thriller</p>
+                    </div>
+                </div>
+                <!-- Movie Card 5 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="8machine-_-fTRk5v4DVyA-unsplash.jpg" alt="New Release 5" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Underwater City</h3>
+                        <p class="text-sm text-gray-400">Fantasy, Adventure</p>
+                    </div>
+                </div>
+                <!-- Movie Card 6 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="marco-bianchetti-mmJFZOkXaX0-unsplash.jpg" alt="New Release 6" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Silent Witness</h3>
+                        <p class="text-sm text-gray-400">Drama, Thriller</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OVIC TV Originals -->
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4 mt-8 ml-2">OVIC TV Originals</h2>
+            <div class="flex overflow-x-scroll scrollbar-hide space-x-4 pb-4">
+                <!-- Original Card 1 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="michael-wWpir9iTsaA-unsplash.jpg" alt="Original 1" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Sovereign Code</h3>
+                        <p class="text-sm text-gray-400">Drama, Sci-Fi</p>
+                    </div>
+                </div>
+                <!-- Original Card 2 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="mostafa-meraji-ebaPIvAB0z0-unsplash.jpg" alt="Original 2" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Last Stand on Terra</h3>
+                        <p class="text-sm text-gray-400">Action, Sci-Fi</p>
+                    </div>
+                </div>
+                <!-- Original Card 3 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="carlos-n-cuatzo-meza-V4uEdumTw5U-unsplash.jpg" alt="Original 3" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The King's Decree</h3>
+                        <p class="text-sm text-gray-400">Historical, Drama</p>
+                    </div>
+                </div>
+                <!-- Original Card 4 -->
+                <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="philipp-deus-5FxSV3Ofr0Q-unsplash.jpg" alt="Original 4" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">Mysteries of the Deep</h3>
+                        <p class="text-sm text-gray-400">Documentary</p>
+                    </div>
+                </div>
+                 <!-- Original Card 5 -->
+                 <div class="flex-shrink-0 w-48 md:w-56 lg:w-64 transform hover:scale-105 transition-transform duration-300 cursor-pointer rounded-lg overflow-hidden shadow-lg">
+                    <img src="muhammad-asyfaul-f2tNsobMisQ-unsplash.jpg" alt="Original 5" class="w-full h-auto object-cover rounded-md">
+                    <div class="p-2 bg-gray-800 rounded-b-lg">
+                        <h3 class="text-md font-medium truncate">The Galactic Nexus</h3>
+                        <p class="text-sm text-gray-400">Sci-Fi, Adventure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-black bg-opacity-70 text-gray-400 text-sm py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 md:px-0 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:underline">Audio Description</a>
+                <a href="#" class="hover:underline">Help Center</a>
+                <a href="#" class="hover:underline">Gift Cards</a>
+                <a href="#" class="hover:underline">Media Centre</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:underline">Investor Relations</a>
+                <a href="#" class="hover:underline">Jobs</a>
+                <a href="#" class="hover:underline">Terms of Use</a>
+                <a href="#" class="hover:underline">Privacy</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:underline">Legal Notices</a>
+                <a href="#" class="hover:underline">Cookie Preferences</a>
+                <a href="#" class="hover:underline">Corporate Information</a>
+                <a href="#" class="hover:underline">Contact Us</a>
+            </div>
+            <p class="mt-8">&copy; 2025 OVIC TV. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
